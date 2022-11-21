@@ -5,7 +5,7 @@ services:
     build: ./inference_container
     container_name: webserver_Cloud
     volumes:
-      - modelStorage: /model
+      - modelStorage:/ModelMap
     networks:
      - Docker_cloud_network
     ports:
@@ -15,7 +15,7 @@ services:
     build: ./model_container
     container_name: trainer_Cloud
     volumes:
-      - modelStorage: /model
+      - modelStorage:/modelStorageMap
     networks:
      - Docker_cloud_network
 

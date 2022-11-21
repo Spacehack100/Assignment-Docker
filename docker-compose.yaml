@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  webserver:
+    build: ./inference_container
+    container_name: webserver_Cloud
+    ports:
+      - 8080:80
+
+  trainer:
+    build: ./model_container
+    container_name: trainer_Cloud

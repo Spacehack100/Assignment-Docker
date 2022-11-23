@@ -8,17 +8,17 @@ app = Flask(__name__, template_folder="template")
 
 @app.route('/')
 def hello(): 
-    return 'welcome to ads effectiveness prediction, wich will predict if you buy a advertised product based on you gender, age and estimated yearly salary. Enter the following URL: http://localhost:8080/predict/<gender(0 for M,1 for F)>/<age>/<Estimated salary>'
+    return 'welcome to ads effectiveness prediction,<br>wich will predict if you buy a advertised product based on you gender, age and estimated yearly salary.<br>Enter the following URL: http://localhost:8080/predict/gender(0 for M,1 for F)/age/Estimated salary(per year)'
 
 @app.route('/predict/<gender>/<age>/<estimatedSalary>')
 def predict(gender,age,estimatedSalary):
     response = ""
-    if gender == 0:
-        response += "Gender = Male\n"
-    if gender == 1:
-        response += "Gender = Female\n"
-    response += "Age =  %s\n" % age
-    response += "EstimatedSalary = %s\n" % estimatedSalary
+    if gender == "0":
+        response += "Gender = Male<br>"
+    if gender == "1":
+        response += "Gender = Female<br>"
+    response += "Age =  %s<br>" % age
+    response += "EstimatedSalary = %s<br>" % estimatedSalary
     
     clf = load('/ModelMap/model.joblib')
     result = clf.predict((np.array([gender,age,estimatedSalary])).reshape(1, -1))

@@ -1,4 +1,4 @@
-# Assignment Docker for Cloud fundamentels
+# Assignment Docker for Cloud fundamentels  -  By Jens Kersemans
 The model will predict whether you will buy an advertised product. It calculates this based on your gender, age and estimated yearly salary.
 
 First intiate the 'docker-compose.yaml' file to start both containers, then use below URL's to continue.<br>
